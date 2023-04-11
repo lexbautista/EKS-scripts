@@ -61,4 +61,3 @@ def resume_asg():
         subprocess.run(resume_command, shell=True, encoding='utf-8')
 
 disable_asg()
-# resume_asg()
