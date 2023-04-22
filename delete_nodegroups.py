@@ -10,6 +10,7 @@ args = parser.parse_args()
 
 nodegroups = args.nodegroups
 cluster = args.cluster
+region = args.region
 
 ### Turns string of nodegroups into list
 def create_nodegroup_list():
@@ -21,7 +22,7 @@ def create_nodegroup_list():
 def delete_nodegroups():
     nodegroups = create_nodegroup_list()
     for ng in nodegroups:
-        command = "eksctl delete nodegroup --cluster=" + cluster +  " --name=" + ng
+        command = "eksctl delete nodegroup --cluster=" + cluster +  " --name=" + ng + "--region=" + region
         subprocess.run(command, shell=True, encoding='utf-8')
 
     
